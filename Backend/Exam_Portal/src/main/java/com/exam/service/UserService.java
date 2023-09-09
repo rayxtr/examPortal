@@ -1,14 +1,21 @@
 package com.exam.service;
 
-import java.util.Set;
+
+import java.util.List;
 
 import com.exam.entity.User;
-import com.exam.entity.UserRole;
 import com.exam.exceptions.UserException;
 
 public interface UserService {
 
-	public User createUser(User user, Set<UserRole>userroles) throws UserException;
+	public User createUser(User user) throws UserException;
+
+	public User getUserByUserName(String username) throws UserException;
+	
+	public List<User> getAllUsers() throws UserException;
+	
+	
+	
 	
 	
 }
