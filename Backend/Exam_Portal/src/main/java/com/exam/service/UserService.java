@@ -14,8 +14,8 @@ public interface UserService {
 	
 	public List<User> getAllUsers() throws UserException;
 	
+	public User updateUser(User user) throws UserException;
 	
-	
-	
-	
+	public User deleteUser(String username) throws UserException; 
+
 }
