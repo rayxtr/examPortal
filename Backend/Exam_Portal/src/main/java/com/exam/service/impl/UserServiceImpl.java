@@ -1,16 +1,16 @@
 package com.exam.service.impl;
 
 import java.util.List;
-import java.util.Set;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.exam.entity.Role;
+
 import com.exam.entity.User;
 
 import com.exam.exceptions.UserException;
-import com.exam.repo.RoleRepo;
+
 import com.exam.repo.UserRepo;
 import com.exam.service.UserService;
 
@@ -33,11 +33,7 @@ public class UserServiceImpl implements UserService{
 			throw new UserException("this user name is not available Please try with different one..");
 		}
 			
-		for(Role r: user.getRoles()) {
-			if(r.getRoleName().equalsIgnoreCase("admin")) {
-				throw new UserException("You can not register as admin");
-			}
-		}
+		
 		
 		return ur.save(user);
 	}
@@ -61,6 +57,18 @@ public class UserServiceImpl implements UserService{
 			throw new UserException("List is empty Ooops no user in the database");
 		}
 		return users;
+	}
+
+	@Override
+	public User updateUser(User user) throws UserException {
+		
+		return ur.save(user);
+	}
+
+	@Override
+	public User deleteUser(String username) throws UserException {
+	
+		return null;
 	}
 	
 
